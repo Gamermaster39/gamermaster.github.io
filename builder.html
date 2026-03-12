@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Configuratore PC</title>
+<link rel="stylesheet" href="homepage.css">
+<link rel="stylesheet" href="builder.css">
+</head>
+
+<body>
+
+<header class="navbar">
+  <div class="logo">Tech<span>Store</span></div>
+<nav>
+    <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="dispositiviportatili.html">Dispositivi portatili</a></li>
+        <li><a href="preassemblati.html">Computer fissi preassemblati</a></li>
+        <li><a href="builder.html">BUILD YOUR PC!!!</a></li>
+        <li><a href="vendi.html">Vendita</a></li>
+    </ul>
+</nav>
+</header>
+
+<div class="compatibility" id="compatibility">
+✔ Compatibilità: Nessun problema
+</div>
+
+<section class="builder">
+
+  <h1>Configuratore PC</h1>
+
+  <div class="build-buttons">
+    <button class="btn build-btn" onclick="buildBudget()">Build Economica</button>
+    <button class="btn build-btn" onclick="buildPerformance()">Build Performance</button>
+    <button class="btn build-btn" onclick="buildExpensive()">Build Costosa</button>
+  </div>
+
+  <div class="builder-grid" id="builderGrid"></div>
+  
+  <div class="total">
+    Totale: <span id="price">0€</span>
+  </div>
+  <button class="btn" id="buyBtn">Acquista</button>
+  <script>window.aichatbotApiKey="e23b12c0-5078-4ace-bbbb-1c9400c87a4c"; window.aichatbotProviderId="f9e9c5e4-6d1a-4b8c-8d3f-3f9e9c5e46d1";</script><script src="https://script.chatlab.com/aichatbot.js" id="e23b12c0-5078-4ace-bbbb-1c9400c87a4c" defer></script>
+
+<!-- MODALE ACQUISTO -->
+<div class="modal" id="purchaseModal">
+  <div class="modal-content purchase-content">
+    <h2>Riepilogo Ordine</h2>
+    <div id="purchaseItems" class="purchase-items"></div>
+    <div class="purchase-footer">
+      <div id="purchaseTotal" class="purchase-total">Totale: 0€</div>
+      <button class="btn" id="confirmPurchase">Acquista</button>
+    </div>
+
+    <div id="loading" style="display:none; text-align:center; margin-top:20px;">
+      <div class="spinner"></div>
+      <div id="loadingText">Acquisto in corso...</div>
+    </div>
+
+    <div id="success" style="display:none; text-align:center; margin-top:20px;">
+      <h2 style="color:green;">Acquisto completato!</h2>
+      <div class="confetti">🎉🎊🎉🎊🎉</div>
+      <p>Grazie per aver usufruito del nostro sito!</p>
+    </div>
+
+    <button class="btn" onclick="closePurchaseModal()" style="margin-top:20px;">Chiudi</button>
+  </div>
+</div>
+  <div class="power-section">
+    <div class="power-info">
+      Consumo stimato: <span id="powerValue">0W</span>
+    </div>
+    <div class="power-bar">
+      <div class="power-fill" id="powerFill"></div>
+    </div>
+  </div>
+
+</section>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2 id="modalTitle"></h2>
+    <div class="items" id="items"></div>
+    <button class="btn" onclick="closeModal()">Chiudi</button>
+  </div>
+</div>
+
+<script src="builder.js"></script>
+</body>
+</html>

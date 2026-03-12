@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vendi il tuo dispositivo</title>
+
+<link rel="stylesheet" href="homepage.css">
+<link rel="stylesheet" href="vendi.css">
+
+</head>
+
+<body>
+
+<header class="navbar">
+
+<div class="logo">
+Tech<span>Store</span>
+</div>
+
+<nav>
+    <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="dispositiviportatili.html">Dispositivi portatili</a></li>
+        <li><a href="preassemblati.html">Computer fissi preassemblati</a></li>
+        <li><a href="builder.html">BUILD YOUR PC!!!</a></li>
+        <li><a href="vendi.html">Vendita</a></li>
+    </ul>
+</nav>
+
+</header>
+
+<section class="sell">
+
+<h1>Vendi il tuo dispositivo</h1>
+
+<div class="progress-bar">
+<div id="progress"></div>
+</div>
+
+
+<div class="device-grid">
+
+<div class="device-card" onclick="startQuestions('smartphone')">
+📱
+<p>Smartphone</p>
+</div>
+
+<div class="device-card" onclick="startQuestions('laptop')">
+💻
+<p>PC Portatile</p>
+</div>
+
+<div class="device-card" onclick="startQuestions('console')">
+🎮
+<p>Console</p>
+</div>
+
+<div class="device-card" onclick="startQuestions('vintage')">
+📼
+<p>Vintage</p>
+</div>
+
+</div>
+
+
+<div id="questionBox" class="question-box"></div>
+
+</section>
+
+
+<div class="modal" id="purchaseModal">
+
+<div class="modal-content purchase-content">
+
+<h2>Riepilogo della vendita</h2>
+
+<div id="purchaseItems" class="purchase-items"></div>
+
+<div class="purchase-footer">
+
+<div id="purchaseTotal" class="purchase-total"></div>
+
+<button class="btn" id="confirmSale">Conferma vendita</button>
+
+</div>
+
+<button class="btn" onclick="closeModal()" style="margin-top:20px;">Chiudi</button>
+
+
+<div id="loadingOverlay">
+
+<div class="loading-box">
+
+<div class="spinner"></div>
+
+<p id="loadingText">Invio richiesta...</p>
+
+</div>
+
+</div>
+
+<div id="successMessage">
+
+<h2>Richiesta inviata con successo!</h2>
+
+<p>Ti contatteremo a breve con la valutazione finale.</p>
+
+<div class="confetti">🎉 🎊 🎉</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+
+<script src="vendi.js"></script>
+
+</body>
+</html>

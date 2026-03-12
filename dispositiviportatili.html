@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechStore - Dispositivi Portatili</title>
+    <link rel="stylesheet" href="dispositivi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">Tech<span>Store</span></div>
+<nav>
+    <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="dispositiviportatili.html" class="active">Dispositivi portatili</a></li>
+        <li><a href="preassemblati.html">Computer fissi preassemblati</a></li>
+        <li><a href="builder.html">BUILD YOUR PC!!!</a></li>
+        <li><a href="vendi.html">Vendita</a></li>
+        <li>
+            <a href="javascript:void(0)" class="cart-nav-btn" onclick="toggleCart(true)">
+                🛒 Carrello (<span id="cartCount">0</span>)
+            </a>
+        </li>
+    </ul>
+</nav>
+</header>
+
+<section class="main-container">
+    <aside class="sidebar">
+        <h3>Categorie</h3>
+        <div class="category-buttons">
+            <button class="btn-cat" onclick="filterByCategory('all')">Tutti i prodotti</button>
+            <button class="btn-cat" onclick="filterByCategory('phones')">Telefoni</button>
+            <button class="btn-cat" onclick="filterByCategory('laptops')">PC Portatili</button>
+            <button class="btn-cat" onclick="filterByCategory('tablets')">Tablet</button>
+            <button class="btn-cat" onclick="filterByCategory('ereaders')">eReader</button>
+        </div>
+
+        <hr>
+
+        <h3>Filtra per</h3>
+        <label>Prezzo Massimo: <span id="priceVal">2000</span>€</label>
+        <input type="range" id="priceFilter" min="100" max="2000" step="50" value="2000" oninput="applyFilters()">
+
+        <label>Marca</label>
+        <select id="brandFilter" onchange="applyFilters()">
+            <option value="all">Tutte le marche</option>
+            <option value="Apple">Apple</option>
+            <option value="Samsung">Samsung</option>
+            <option value="Google">Google</option>
+            <option value="Amazon">Amazon</option>
+            <option value="HP">HP</option>
+            <option value="Asus">Asus</option>
+        </select>
+
+        <label>Ordina per</label>
+        <select id="sortFilter" onchange="applyFilters()">
+            <option value="default">Rilevanza</option>
+            <option value="low">Prezzo: dal più basso</option>
+            <option value="high">Prezzo: dal più alto</option>
+        </select>
+    </aside>
+
+    <main class="products-grid" id="productsGrid"></main>
+</section>
+
+<div class="modal-overlay" id="deviceModal">
+    <div class="modal-card">
+        <button class="close-x" onclick="closeDevice()">×</button>
+        <div class="modal-body">
+            <div class="modal-gallery">
+                <img id="mainModalImage" src="" alt="Prodotto">
+                <div class="thumbs" id="modalThumbs"></div>
+            </div>
+            <div class="modal-info">
+                <h2 id="modalTitle"></h2>
+                <p class="brand-tag" id="modalBrand"></p>
+                <div class="price-section"><span id="modalPrice"></span></div>
+                <button class="btn-buy" onclick="addToCart()">AGGIUNGI AL CARRELLO</button>
+                <div class="extra-info">
+                    <h3>Descrizione</h3>
+                    <p id="modalDesc"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="cartSidebar" class="cart-sidebar">
+    <div class="cart-header">
+        <h2>Il Tuo Carrello</h2>
+        <button class="close-cart" onclick="toggleCart(false)">×</button>
+    </div>
+    <div id="cartItems" class="cart-items-container">
+        </div>
+    <div class="cart-footer">
+        <div class="total-row">
+            <span>Totale:</span>
+            <span id="cartTotal">0€</span>
+        </div>
+        <button class="btn-checkout" onclick="checkout()">PROCEDI ALL'ACQUISTO</button>
+    </div>
+</div>
+
+<script src="devices.js"></script>
+</body>
+</html>
